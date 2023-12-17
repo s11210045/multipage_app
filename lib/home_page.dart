@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:multipage_app/second_page.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  var nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -10,19 +10,40 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home'),
       ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.blue.shade200,
-        child: Center(
-          child: ElevatedButton(
+      body: ListView.builder(
+        itemCount: 8,
+          itemBuilder: (_, index){
+            return Container(
+              width: double.infinity,
+              height: 100,
+              child: Center(
+                child: InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(index: index+1,)));
+                  },
+                    child: Text('${index+1}')),
+              ),
+            );
+      })
+
+
+      /*Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextField(
+            controller: nameController,
+          ),
+          ElevatedButton(
             onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()));
+
+              var mName = nameController.text.toString();
+
+              Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(niame: mName,)));
             },
             child: Text('Next Page'),
           ),
-        ),
-      ),
+        ],
+      ),*/
     );
   }
 }
