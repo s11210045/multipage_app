@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multipage_app/app_routes.dart';
 import 'package:multipage_app/screens/second_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
               child: Center(
                 child: InkWell(
                   onTap: (){
-                    Navigator.pushReplacementNamed(context, Builder(builder: )));
+                    Navigator.pushReplacementNamed(context, AppRoutes.secondPage);
                   },
                     child: Text('${index+1}')),
               ),
