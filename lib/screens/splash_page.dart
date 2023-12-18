@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:multipage_app/home_page.dart';
+import 'package:multipage_app/app_routes.dart';
+import 'package:multipage_app/screens/home_page.dart';
 
 class SplashPage extends StatefulWidget {
   const   SplashPage({super.key});
@@ -17,11 +18,7 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
 
     Timer(Duration(seconds: 4), () {
-      Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => HomePage(),
-          ));
+      Navigator.pushReplacementNamed(context, AppRoutes.homePage);
     });
   }
 

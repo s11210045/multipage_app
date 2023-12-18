@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:multipage_app/second_page.dart';
+import 'package:multipage_app/screens/second_page.dart';
 
 class HomePage extends StatelessWidget {
   var nameController = TextEditingController();
@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
               child: Center(
                 child: InkWell(
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage(index: index+1,)));
+                    Navigator.pushReplacementNamed(context, Builder(builder: )));
                   },
                     child: Text('${index+1}')),
               ),

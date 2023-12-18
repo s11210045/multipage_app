@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:multipage_app/splash_page.dart';
+import 'package:multipage_app/app_routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SplashPage(),
+      initialRoute: AppRoutes.splashPage,
+      routes: AppRoutes.myRoutes()
     );
   }
 }
